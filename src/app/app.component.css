@@ -10,7 +10,8 @@ header {
 }
 
 .header-text {
- text-align: center;
+  text-align: center;
+  font-size: 40px;
 }
 
 
@@ -40,16 +41,39 @@ header {
   color: var(--amarillo);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .contenedor {
+    height: 85vh;
+  }
+}
+
+@media (min-width: 992px) {
+  .contenedor {
+    height: 100vh;
     flex-direction: row;
     align-items: stretch;
   }
   .sidebar {
-    width: 30%;
+    width: 40%;
+    flex-grow: 1;
   }
   .home {
-    width: 70%;
+    width: 60%;
+    flex-grow: 1;
   }
 }
 
+@media (min-width: 1200px) {
+  .sidebar {
+    width: 35%;
+  }
+  .home {
+    width: 65%;
+  }
+}
+
+@media (min-width: 1517px) {
+  .contenedor {
+    height: 83.7vh;
+  }
+}

@@ -5,17 +5,18 @@
 }
 
 label {
-  font-size: 18px;
+  font-size: 26px;
 }
 
 p {
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 10px;
+  color: chocolate;
 }
 
 .invalido {
   color: red;
-  font-size: 12px;
+  font-size: 16px;
   margin-top: 5px;
 }
 

@@ -1,0 +1,20 @@
+.card{
+  width: 15rem;
+}
+
+.card-subtitle {
+  color: var(--anaranjado) !important;
+}
+
+@media (min-width: 992px) {
+  .card{
+    width: 28rem;
+  }
+  .card-title {
+    font-size: 1.8rem;
+  }
+
+  .card-subtitle {
+    font-size: 1.5rem;
+  }
+}

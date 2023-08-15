@@ -1,12 +1,14 @@
 .titulo {
   text-align: center;
-  font-size: 1.8rem;
-  margin: 1rem 0;
+  font-size: 2.8rem;
+  margin: .5rem 0;
+  color: var(--header-font-color);
 }
 .cards {
   display: flex;
   flex-wrap: wrap;
-  margin: 2rem 0;
+  margin: 2rem;
+  margin-top: 0;
   gap: 1rem;
   justify-content: space-evenly;
 }
