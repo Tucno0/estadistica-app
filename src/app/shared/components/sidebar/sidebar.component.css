@@ -1,0 +1,32 @@
+
+
+.card {
+  background-color: var(--sidebar);
+}
+
+label {
+  font-size: 18px;
+}
+
+p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.invalido {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.boton {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn {
+  width: 12rem;
+
+}

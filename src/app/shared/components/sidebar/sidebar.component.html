@@ -1,0 +1,37 @@
+<div class="sidebar text-light">
+  <div class="card text-light">
+    <div class="card-body">
+      <form action="">
+        <label for="validationTextarea" class="form-label"
+          >Ingrese el conjunto de datos</label
+        >
+        <textarea
+          class="form-control"
+          id="validationTextarea"
+          placeholder="48, 43, 38, 32, 15, 12, 38, 15, 21, 25"
+          (keyup.enter)="calcular()"
+          #datosTagInput
+          required
+        ></textarea>
+
+        <div *ngIf="error" class="invalido">
+          El campo solo debe contener numeros separados por coma (,)
+        </div>
+
+        <p>Los datos deben ir separados por comma (,)</p>
+
+        <div class="boton">
+          <button (click)="calcular()" type="button" class="btn btn-primary">
+            Calcular
+            <i class="fa-solid fa-calculator"></i>
+          </button>
+
+          <button (click)="limpiar()" type="button" class="btn btn-danger">
+            Limpiar datos
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

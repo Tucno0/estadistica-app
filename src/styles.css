@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --blanco: #FFFFFF;
+  --blanco-crema: #F2F7F5;
+  --amarillo: #FAAE2B;
+  --verde-orcuro: #00473E;
+  --anaranjado: #FF7500;
+  --negro: #292929;
+  --negro2: #121212;
+  --gris: #565656;
+  --header: #212529;
+  --home: #F2F7F5;
+  --sidebar: #1f2937;
+
+  /* --header: #202124; */
+  --header: #F2F7F5;
+  --header-font-color: #0D6EFD;
+  --footer: #064eb9;
+  --text1: #000;
+  --text2: #292929;
+  --text3: #e4e0dd;
+  --text4:#09647a;
+
+  --fuente-principal: "Poppins", sans-serif;;
+}
+
+/* Globales */
+body {
+  font-family: var(--fuente-principal);
+  font-size: 1.6rem;
+  /* overflow-x: hidden; */
+}
+
+.contenedor{
+  max-width: 200rem;
+
+}
