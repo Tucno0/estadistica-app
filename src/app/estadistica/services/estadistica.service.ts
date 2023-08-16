@@ -12,7 +12,7 @@ export class EstadisticaService {
   public mediana: Medida = { nombre: 'Mediana', valor: 0 };
   public mediaGeometrica: Medida = { nombre: 'Media geométrica', valor: 0 };
   public medidaCentralidad: Medida = {
-    nombre: 'Medida de centralidad',
+    nombre: 'Medida de centralidad (Q1, Q2, Q3)',
     valor: 0,
   };
   public varianza: Medida = { nombre: 'Varianza', valor: 0 };
@@ -30,7 +30,7 @@ export class EstadisticaService {
     this.moda.valor = this.calcularModa(datos) || 0;
     this.mediana.valor = this.calcularMediana(datos);
     this.mediaGeometrica.valor = this.calcularMediaGeometrica(datos);
-    this.medidaCentralidad.valor = this.calcularMedidaCentralidad(datos);
+    this.medidaCentralidad.valor = this.calcularCuartiles(datos);
     this.varianza.valor = this.calcularVarianza(datos);
     this.desviacionEstandar.valor = this.calcularDesviacionEstandar(datos);
   }
@@ -98,6 +98,30 @@ export class EstadisticaService {
 
     return (media + moda + mediana + mediaGeometrica) / 4;
   }
+
+  calcularCuartiles(numerosArray: number[]): number[] {
+    const sortedNumeros = [...numerosArray].sort((a, b) => a - b);
+
+    function calcularInterpolacionLineal(arr: number[], position: number): number {
+        const lowerIndex = Math.floor(position);
+        const upperIndex = Math.ceil(position);
+
+        const lowerValue = arr[lowerIndex];
+        const upperValue = arr[upperIndex];
+
+        return lowerValue + (position - lowerIndex) * (upperValue - lowerValue);
+    }
+
+    const q1Position = 0.25 * (sortedNumeros.length - 1);
+    const q2Position = 0.5 * (sortedNumeros.length - 1);
+    const q3Position = 0.75 * (sortedNumeros.length - 1);
+
+    const q1 = calcularInterpolacionLineal(sortedNumeros, q1Position);
+    const q2 = calcularInterpolacionLineal(sortedNumeros, q2Position);
+    const q3 = calcularInterpolacionLineal(sortedNumeros, q3Position);
+
+    return [q1, q2, q3];
+}
 
   calcularVarianza(numeros: number[]): number {
     const media = this.calcularMedia(numeros);
